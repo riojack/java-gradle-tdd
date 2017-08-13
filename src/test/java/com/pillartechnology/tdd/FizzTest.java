@@ -12,4 +12,10 @@ public class FizzTest {
         assertEquals("1", fizz.fizz(1));
     }
 
+    @Test
+    public void shouldReturnTwoWhenTwoIsGivenToFizzMethod() {
+        Fizz fizz = new Fizz();
+
+        assertEquals("2", fizz.fizz(2));
+    }
 }
