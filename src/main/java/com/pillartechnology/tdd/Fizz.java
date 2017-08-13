@@ -6,6 +6,16 @@ public class Fizz {
     public static final int FIZZ_DIVIDER = 3;
     public static final int BUZZ_DIVIDER = 5;
 
+    public String[] fizz(int[] numbers) {
+        String[] stringNumbers = new String[numbers.length];
+
+        for (int i = 0; i < numbers.length; i++) {
+            stringNumbers[i] = this.fizz(numbers[i]);
+        }
+
+        return stringNumbers;
+    }
+
     public String fizz(int fizzableNumber) {
         String answer = Integer.toString(fizzableNumber);
         boolean shouldFizz = isFizzNumber(fizzableNumber);

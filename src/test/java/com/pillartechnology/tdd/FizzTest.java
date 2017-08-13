@@ -3,7 +3,8 @@ package com.pillartechnology.tdd;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 public class FizzTest {
     private Fizz fizz;
@@ -42,5 +43,14 @@ public class FizzTest {
     public void shouldReturnFizzBuzzWhenFifteenIsGivenToFizzMethod() {
         assertEquals("fizz buzz", fizz.fizz(15));
     }
+
+    @Test
+    public void shouldReturnFizzesAndBuzzesAndFizzBuzzesAsExpected() {
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+        String[] expectedOutput = {"1", "2", "fizz", "4", "buzz", "fizz", "7", "8", "fizz", "buzz", "11", "fizz", "13", "14", "fizz buzz"};
+
+        assertArrayEquals(expectedOutput, fizz.fizz(numbers));
+    }
+
 
 }
