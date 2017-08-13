@@ -1,5 +1,7 @@
 package com.pillartechnology.tdd;
 
+import java.util.Arrays;
+
 public class Fizz {
     public static final String FIZZ = "fizz";
     public static final String BUZZ = "buzz";
@@ -7,13 +9,9 @@ public class Fizz {
     public static final int BUZZ_DIVIDER = 5;
 
     public String[] fizz(int[] numbers) {
-        String[] stringNumbers = new String[numbers.length];
-
-        for (int i = 0; i < numbers.length; i++) {
-            stringNumbers[i] = this.fizz(numbers[i]);
-        }
-
-        return stringNumbers;
+        return Arrays.stream(numbers)
+            .mapToObj(this::fizz)
+            .toArray(String[]::new);
     }
 
     public String fizz(int fizzableNumber) {
