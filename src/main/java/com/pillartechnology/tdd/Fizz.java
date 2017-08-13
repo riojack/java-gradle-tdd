@@ -8,19 +8,29 @@ public class Fizz {
 
     public String fizz(int fizzableNumber) {
         String answer = Integer.toString(fizzableNumber);
+        boolean shouldFizz = isFizzNumber(fizzableNumber);
+        boolean shouldBuzz = isBuzzNumber(fizzableNumber);
 
-        if (fizzableNumber % FIZZ_DIVIDER == 0) {
+        if (shouldFizz) {
             answer = FIZZ;
         }
 
-        if (fizzableNumber % BUZZ_DIVIDER == 0) {
+        if (shouldBuzz) {
             answer = BUZZ;
         }
 
-        if (fizzableNumber % FIZZ_DIVIDER == 0 && fizzableNumber % BUZZ_DIVIDER == 0) {
+        if (shouldFizz && shouldBuzz) {
             answer = FIZZ + " " + BUZZ;
         }
 
         return answer;
+    }
+
+    private boolean isBuzzNumber(int fizzableNumber) {
+        return fizzableNumber % BUZZ_DIVIDER == 0;
+    }
+
+    private boolean isFizzNumber(int fizzableNumber) {
+        return fizzableNumber % FIZZ_DIVIDER == 0;
     }
 }
