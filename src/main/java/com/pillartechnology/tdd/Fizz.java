@@ -17,6 +17,10 @@ public class Fizz {
             answer = BUZZ;
         }
 
+        if (fizzableNumber % FIZZ_DIVIDER == 0 && fizzableNumber % BUZZ_DIVIDER == 0) {
+            answer = FIZZ + " " + BUZZ;
+        }
+
         return answer;
     }
 }
