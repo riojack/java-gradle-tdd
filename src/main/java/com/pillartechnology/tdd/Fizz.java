@@ -3,10 +3,10 @@ package com.pillartechnology.tdd;
 public class Fizz {
     public static final String FIZZ = "fizz";
 
-    public String fizz(Integer fizzableNumber) {
-        String answer = fizzableNumber.toString();
+    public String fizz(int fizzableNumber) {
+        String answer = Integer.toString(fizzableNumber);
 
-        if (fizzableNumber.equals(3)) {
+        if (fizzableNumber == 3) {
             answer = FIZZ;
         }
 
