@@ -52,5 +52,8 @@ public class FizzTest {
         assertArrayEquals(expectedOutput, fizz.fizz(numbers));
     }
 
-
+    @Test
+    public void shouldReturnZeroWhenZeroIsGivenToFizzMethod() {
+        assertEquals("0", fizz.fizz(0));
+    }
 }

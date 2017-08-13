@@ -18,6 +18,7 @@ public class Fizz {
 
     public String fizz(int fizzableNumber) {
         String answer = Integer.toString(fizzableNumber);
+
         boolean shouldFizz = isFizzNumber(fizzableNumber);
         boolean shouldBuzz = isBuzzNumber(fizzableNumber);
 
@@ -37,10 +38,10 @@ public class Fizz {
     }
 
     private boolean isBuzzNumber(int fizzableNumber) {
-        return fizzableNumber % BUZZ_DIVIDER == 0;
+        return fizzableNumber != 0 && fizzableNumber % BUZZ_DIVIDER == 0;
     }
 
     private boolean isFizzNumber(int fizzableNumber) {
-        return fizzableNumber % FIZZ_DIVIDER == 0;
+        return fizzableNumber != 0 && fizzableNumber % FIZZ_DIVIDER == 0;
     }
 }
