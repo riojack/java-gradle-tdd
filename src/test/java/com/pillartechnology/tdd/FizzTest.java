@@ -22,4 +22,9 @@ public class FizzTest {
     public void shouldReturnTwoWhenTwoIsGivenToFizzMethod() {
         assertEquals("2", fizz.fizz(2));
     }
+
+    @Test
+    public void shouldReturnFizzWhenThreeIsGivenToFizzMethod() {
+        assertEquals("fizz", fizz.fizz(3));
+    }
 }
