@@ -22,23 +22,19 @@ public class Fizz {
         boolean shouldFizz = isFizzNumber(fizzableNumber);
         boolean shouldBuzz = isBuzzNumber(fizzableNumber);
 
-        if (shouldFizz) {
-            answer = FIZZ;
-        }
-
-        if (shouldBuzz) {
-            answer = BUZZ;
-        }
-
         if (shouldFizz && shouldBuzz) {
             answer = FIZZ + " " + BUZZ;
+        } else if (shouldFizz) {
+            answer = FIZZ;
+        } else if (shouldBuzz) {
+            answer = BUZZ;
         }
 
         return answer;
     }
 
-    private boolean isBuzzNumber(int fizzableNumber) {
-        return fizzableNumber != 0 && fizzableNumber % BUZZ_DIVIDER == 0;
+    private boolean isBuzzNumber(int buzzableNumber) {
+        return buzzableNumber != 0 && buzzableNumber % BUZZ_DIVIDER == 0;
     }
 
     private boolean isFizzNumber(int fizzableNumber) {
